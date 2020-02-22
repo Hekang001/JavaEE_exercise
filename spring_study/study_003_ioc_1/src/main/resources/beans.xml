@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean id = "user" class="com.kang.pro.User">
+        <property name="name" value="hekang"/>
+    </bean>-->
+
+    <!-- 第一种含参构造方法
+    使用参数下标-->
+    <!--<bean id="user" class = "com.kang.pro.User">
+        <constructor-arg index="0" value="Hekang"/>
+    </bean>-->
+
+    <!--
+    第二种含参构造方法
+    使用参数类型
+    -->
+  <!--  <bean id = "user" class="com.kang.pro.User">
+        <constructor-arg type="java.lang.String" value="彭淑桢"/>
+    </bean>-->
+
+    <!--
+        id :bean的唯一标识符，也就是相当于我们学的对象名
+        class:bean 对象所对应的全限定名 包名+类名
+        name: 也是别名，而且name可以起多个别名
+    -->
+    <bean id ="user" class="com.kang.pro.User" name="u1,u2,u3">
+        <constructor-arg name="name" value="Hekang"/>
+        <constructor-arg name="score" value="45"/>
+    </bean>
+
+    <bean id ="userT" class ="com.kang.pro.UserT"/>
+
+    <!--别名，如果添加了别名，我们就也可以通过别名获取这个对象-->
+    <alias name="user" alias="Sky"/>
+
+
+</beans>

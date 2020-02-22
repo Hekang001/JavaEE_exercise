@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--使用Spring来创建对象，在spring中这些都叫做Bean-->
+
+    <bean id ="oracleImpl" class="com.kang.dao.UserDaoOracleImpl"/>
+    <bean id ="MysqlImpl" class ="com.kang.dao.UserDaoMysqlImpl"/>
+
+    <bean id = "UserServiceImpl" class ="com.kang.service.UserServiceImpl">
+        <!--
+            ref : 引用Spring容器中创建好的对象
+            value: 具体的值，剧本数据类型
+        -->
+        <property name="userDao" ref="oracleImpl"/>
+    </bean>
+
+</beans>
